@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import axios from 'axios'
 import Home from "./Home"
 import About from "./About"
@@ -39,17 +39,17 @@ function App() {
   if (loading) return "Loading..."
   
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home pokemon={pokemon} 
         gotoNextPage={gotoNextPage} 
-        gotoPrevPage={gotoPrevPage}/>} 
+        gotoPrevPage={gotoPrevPage}
+        nextPageUrl={nextPageUrl}
+        prevPageUrl={prevPageUrl}
+        />} 
         />
         <Route path="about" element={<About />} />
         <Route path="Pokemon" element={<Pokemon />} />
       </Routes>
-    </BrowserRouter>
-   
   );
 }
 
