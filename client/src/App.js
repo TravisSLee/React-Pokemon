@@ -4,6 +4,9 @@ import axios from 'axios'
 import Home from "./Home"
 import About from "./About"
 import Pokemon from "./Pokemon"
+import NavBar from "./NavBar";
+import Footer from "./Footer"
+import Error from './Error';
 
 
 function App() {
@@ -39,17 +42,22 @@ function App() {
   if (loading) return "Loading..."
   
   return (
-      <Routes>
-        <Route path="/" element={<Home pokemon={pokemon} 
-        gotoNextPage={gotoNextPage} 
-        gotoPrevPage={gotoPrevPage}
-        nextPageUrl={nextPageUrl}
-        prevPageUrl={prevPageUrl}
-        />} 
-        />
-        <Route path="about" element={<About />} />
-        <Route path="pokemon/:name" element={<Pokemon />} />
-      </Routes>
+      <>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home pokemon={pokemon} 
+          gotoNextPage={gotoNextPage} 
+          gotoPrevPage={gotoPrevPage}
+          nextPageUrl={nextPageUrl}
+          prevPageUrl={prevPageUrl}
+          />} 
+          />
+          <Route path="about" element={<About />} />
+          <Route path="pokemon/:name" element={<Pokemon />} />
+          <Route path="?" element={<Error />} />
+        </Routes>
+        <Footer />
+      </>
   );
 }
 
