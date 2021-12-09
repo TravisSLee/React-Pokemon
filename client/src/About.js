@@ -5,10 +5,9 @@ export default function About() {
     return (
         <>
             <main>
-                <h2>Who are we?</h2>
+                <h2>Why chose PokeLearner?</h2>
                 <p>
-                That feels like an existential question, don't you
-                think?
+                PokeLearner is the World's Number 1 place to learn pokemon!
                 </p>
             </main>
             <nav>
