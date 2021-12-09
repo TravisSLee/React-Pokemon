@@ -48,7 +48,7 @@ function App() {
         />} 
         />
         <Route path="about" element={<About />} />
-        <Route path="Pokemon" element={<Pokemon />} />
+        <Route path="pokemon/:name" element={<Pokemon />} />
       </Routes>
   );
 }
