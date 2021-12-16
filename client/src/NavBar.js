@@ -5,7 +5,8 @@ import Container from 'react-bootstrap/Container';
 
 export default function NavBar() {
     return (
-            <Navbar >
+            <Navbar bg="primary" expand="lg" >
+                <Navbar.Brand href="/">PokeLearner v2.0</Navbar.Brand>
                 <Container>
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>

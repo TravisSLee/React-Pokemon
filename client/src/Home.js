@@ -8,9 +8,6 @@ export default function Home({pokemon, gotoNextPage, gotoPrevPage, nextPageUrl, 
     
     return (
         <>
-            <nav>
-                
-            </nav>
             <PokemonList pokemon={pokemon} />
             <Pagination
                 gotoNextPage={nextPageUrl ? gotoNextPage : null}
