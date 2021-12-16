@@ -53,7 +53,7 @@ function App() {
           />} 
           />
           <Route path="about" element={<About />} />
-          <Route path="pokemon/:name" element={<Pokemon url={currentPageUrl}/>} />
+          <Route path="pokemon/:name" element={<Pokemon url={currentPageUrl} loading={loading} setLoading={setLoading}/>} />
           <Route element={<Error />} />
         </Routes>
         <Footer />

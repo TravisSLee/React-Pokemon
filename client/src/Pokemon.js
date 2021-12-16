@@ -3,25 +3,25 @@ import axios from 'axios'
 import { useParams } from "react-router-dom";
 import style from './Pokemon.module.css'
 
-export default function Pokemon({url}) {
+export default function Pokemon({url,loading, setLoading}) {
     const {name} = useParams();
-    const [loading, setLoading] = useState(true)
+    const [thisPgUrl] = useState(url + "/" + name)
     const [mon, setMon] = useState()
 
     useEffect(() => {
         setLoading(true)
         let cancel
-        axios.get(url+ "/" + name, {
+        axios.get(thisPgUrl, {
           cancelToken: new axios.CancelToken(c => cancel = c)
         }).then(res => {
           setLoading(false)
-          setMon(res.data)
           console.log(res.data)
+          setMon(res.data)
         })
     
         return () => cancel()
         
-      }, [url])
+      }, [])
 
 
 
