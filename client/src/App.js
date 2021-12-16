@@ -54,7 +54,7 @@ function App() {
           />
           <Route path="about" element={<About />} />
           <Route path="pokemon/:name" element={<Pokemon />} />
-          <Route path="?" element={<Error />} />
+          <Route element={<Error />} />
         </Routes>
         <Footer />
       </>
