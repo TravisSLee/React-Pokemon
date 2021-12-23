@@ -42,7 +42,7 @@ export default function Pokemon({url, loading, setLoading}) {
     }
     
     function getAbilities(){
-      
+
     }
       
 
@@ -51,9 +51,9 @@ export default function Pokemon({url, loading, setLoading}) {
 
     return (
         <>
-            <div className={style.name}>{name} #{mon.id}</div>
-            <Image src={mon.sprites.front_default} roundedCircle />
-            <Image src={mon.sprites.front_shiny} roundedCircle />
+            <h1 className={style.name}>{name} #{mon.id}</h1>
+            <Image className={style.img} src={mon.sprites.front_default} roundedCircle />
+            <Image className={style.img} src={mon.sprites.front_shiny} roundedCircle />
             <div>{ getTypes() }</div>
         </>
     )
