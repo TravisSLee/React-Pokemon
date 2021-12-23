@@ -11,7 +11,6 @@ import Error from './Error';
 function App() {
   
   const [currentPageUrl, setCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon")
-  
   const [loading, setLoading] = useState(true)
 
   
