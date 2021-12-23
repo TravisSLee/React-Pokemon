@@ -39,7 +39,11 @@ export default function Pokemon({url, loading, setLoading}) {
       mon.types.map((t,i) => {
         return <div key={i}>{t.type.name}</div>
       })
-    }  
+    }
+    
+    function getAbilities(){
+      
+    }
       
 
 
