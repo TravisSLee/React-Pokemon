@@ -6,23 +6,25 @@ import style from './Pokemon.module.css'
 export default function Pokemon({url,loading, setLoading}) {
     const {name} = useParams();
     const [thisPgUrl] = useState(url + "/" + name)
-    const [mon, setMon] = useState()
+    const [mon, setMon] = useState(null)
+
+    function getMon() {
+      setTimeout(async () => {
+          try {
+              const res = await axios.get(thisPgUrl)
+              setMon(res.data)
+              setLoading(false)
+          } catch (error) {
+              await console.log(error);
+          }
+      }, 0);
+  }
 
     useEffect(() => {
-        setLoading(true)
-        let cancel
-        axios.get(thisPgUrl, {
-          cancelToken: new axios.CancelToken(c => cancel = c)
-        }).then(res => {
-          setLoading(false)
-          console.log(res.data)
-          setMon(res.data)
-        })
-    
-        return () => cancel()
-        
+        getMon()
       }, [])
 
+      
 
 
       if (loading) return "Loading..."
