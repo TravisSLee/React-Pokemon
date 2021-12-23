@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import style from './Pokemon.module.css'
 import Image from 'react-bootstrap/Image';
 
-export default function Pokemon({url,loading, setLoading}) {
+export default function Pokemon({url, loading, setLoading}) {
     const {name} = useParams();
     const [thisPgUrl] = useState(url + "/" + name)
     const [mon, setMon] = useState(null)
@@ -13,6 +13,7 @@ export default function Pokemon({url,loading, setLoading}) {
 
         const res = await axios.get(thisPgUrl)
         setMon(res.data)
+        console.log(res.data)
     }
 
     const getMon = async () => {
@@ -30,19 +31,26 @@ export default function Pokemon({url,loading, setLoading}) {
 
     useEffect(() => {
         setLoading(true)
-        getMon
+        getMon()
       }, [])
-
+    
+    
+    function getTypes() {
+      mon.types.map((t,i) => {
+        return <div key={i}>{t.type.name}</div>
+      })
+    }  
       
 
 
-      if (loading) return "Loading..."
+    if (loading) return "Loading..."
 
     return (
         <>
             <div className={style.name}>{name} #{mon.id}</div>
             <Image src={mon.sprites.front_default} roundedCircle />
             <Image src={mon.sprites.front_shiny} roundedCircle />
+            <div>{ getTypes() }</div>
         </>
     )
 }

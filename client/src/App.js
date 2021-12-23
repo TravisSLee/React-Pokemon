@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home"
 import About from "./About"
@@ -27,6 +27,8 @@ function App() {
           />
           <Route path="about" element={<About />} />
           <Route path="pokemon/:name" element={<Pokemon url={currentPageUrl} 
+          loading={loading} 
+          setLoading={setLoading}
           />} 
           />
           <Route element={<Error />} />

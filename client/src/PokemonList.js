@@ -7,11 +7,11 @@ export default function PokemonList({ pokemon }) {
     
     return (
         <div>
-            { pokemon.map(p => (
+            { pokemon.map((p,index) => (
                 <Nav.Item>
                     <Nav.Link className={style.name} 
                     href={`/pokemon/${p.name}`}
-                    key={p.name}>{p.name}</Nav.Link>
+                    key={index}>{p.name}</Nav.Link>
                 </Nav.Item>
             ))}
         </div>
