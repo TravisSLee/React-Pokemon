@@ -35,15 +35,7 @@ export default function Pokemon({url, loading, setLoading}) {
       }, [])
     
     
-    function getTypes() {
-      mon.types.map((t,i) => {
-        return <div key={i}>{t.type.name}</div>
-      })
-    }
     
-    function getAbilities(){
-
-    }
       
 
 
@@ -54,7 +46,18 @@ export default function Pokemon({url, loading, setLoading}) {
             <h1 className={style.name}>{name} #{mon.id}</h1>
             <Image className={style.img} src={mon.sprites.front_default} roundedCircle />
             <Image className={style.img} src={mon.sprites.front_shiny} roundedCircle />
-            <div>{ getTypes() }</div>
+            <div className={style.types}>
+            {  mon.types.map((t,i) => {
+                return <div key={i}>{t.type.name}</div>
+            }) }
+            </div>
+            <div className={style.abilities}>
+            {  mon.abilities.map((a,i) => {
+                return <div key={i}>{a.ability.name}</div>
+            }) }
+            </div>
+            
+
         </>
     )
 }
