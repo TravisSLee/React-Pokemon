@@ -25,6 +25,12 @@ function App() {
           setLoading={setLoading}
           />} 
           />
+          <Route path="berries" element={<Berries
+           url={currentPageUrl}           
+           loading={loading} 
+           setLoading={setLoading}
+           />} 
+          />
           <Route path="about" element={<About />} />
           <Route path="pokemon/:name" element={<Pokemon url={currentPageUrl} 
           loading={loading} 
