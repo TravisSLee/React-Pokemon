@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home"
-import About from "./About"
-import Pokemon from "./Pokemon"
+import Home from "./components/Home"
+import About from "./components/About"
+import Berries from "./components/Berries"
+import Pokemon from "./components/Pokemon"
 import NavBar from "./NavBar";
 import Footer from "./Footer"
 import Error from './Error';

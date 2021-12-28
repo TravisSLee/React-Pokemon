@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+
 import PokemonList from './PokemonList';
-import Pagination from './Pagination';
+import Pagination from '../Pagination';
 import Container from 'react-bootstrap/Container';
-import style from './app.module.css'
+import style from '../app.module.css'
 
 export default function Home({loading, setLoading ,currentPageUrl, setCurrentPageUrl}) {
     const [pokemon, setPokemon] = useState([])
